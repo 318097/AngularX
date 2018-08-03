@@ -1,0 +1,21 @@
+h2 {
+    padding: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.nav a {
+    padding: 15px;
+    margin: 0 1px;
+    background: rgba(235, 235, 235, 0.3);
+}
+
+.nav a:hover {
+    background: rgba(235, 235, 235, 0.7);
+    text-decoration: line-through;
+}
+
+.active {
+    background: rgba(235, 235, 235, 0.7);
+    text-decoration: line-through;
+}

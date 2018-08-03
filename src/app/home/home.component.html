@@ -1,0 +1,47 @@
+<!-- adding multiple classes using class attribute and ngclass -->
+<h2 class="well" [ngClass]="{'red' : true}">Activation Guard</h2>
+<button class="btn btn-danger" (click)="setAccess(false)">Lock</button>
+<button class="btn btn-success" (click)="setAccess(true)">Unlock</button>
+
+<hr>
+
+<h2> Content Projection</h2>
+<div class="card" *ngFor="let data of cardData">
+    <app-collapsible-card>
+        <!-- card-title is the attribute -->
+        <div card-title>
+            {{data.title}}
+        </div>
+        <div class="card-body">
+            {{data.content}}
+        </div>
+    </app-collapsible-card>
+</div>
+
+<hr>
+
+<h2>DOM Sanitizer</h2>
+<div [innerHTML]="htmlData | safeHtml"></div>
+
+<hr>
+
+<div>
+    <h3 class="slide-effect">Parent</h3>
+    <input type="text" [(ngModel)]="obj.name">
+</div>
+
+<div>
+    <h3>Child</h3>
+    <app-test [obj]="obj"></app-test>
+</div>
+<hr>
+<button (click)="log()">CLICK</button>
+<br> {{obj | json}}
+
+<hr>
+
+<div class="button">
+    Buttonn
+    <div class="test">
+    </div>
+</div>

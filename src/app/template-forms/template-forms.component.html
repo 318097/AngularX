@@ -1,0 +1,52 @@
+<div>
+  <form #templateForm="ngForm" (ngSubmit)="login(templateForm.value)">
+    <div class="form-group">
+      <label class="center-block">Name:
+        <input type="text" class="form-control" [(ngModel)]="name" name="userName" id="userName" required>
+        <em *ngIf="templateForm.controls.userName?.invalid && templateForm.controls.userName?.touched">Required</em>
+      </label>
+    </div>
+    <div class="form-group">
+      <label class="center-block">Password:
+        <input type="password" class="form-control" [(ngModel)]="password" name="password" required>
+      </label>
+    </div>
+
+    <div>
+      <input class="btn" type="submit" value="Submit">
+    </div>
+  </form>
+</div>
+
+<p>Valid? :: {{templateForm.valid}}</p>
+<p>Invalid? :: {{templateForm.invalid}}</p>
+<p>Dirty? :: {{templateForm.dirty}}</p>
+<p>Pristine? :: {{templateForm.pristine}}</p>
+<p>Submitted? :: {{templateForm.submitted}}</p>
+<p>Touched? :: {{templateForm.touched}}</p>
+<p>Untouched? :: {{templateForm.untouched}}</p>
+<!-- <hr> -->
+<br>
+<p>Username Valid? :: {{templateForm.controls.userName.valid}}</p>
+<p>Username Invalid? :: {{templateForm.controls.userName.invalid}}</p>
+<p>Username Dirty? :: {{templateForm.controls.userName.dirty}}</p>
+<p>Username Pristine? :: {{templateForm.controls.userName.pristine}}</p>
+<p>Username Touched? :: {{templateForm.controls.userName.touched}}</p>
+<p>Username Untouched? :: {{templateForm.controls.userName.untouched}}</p>
+<hr>
+
+<div>
+  <form #mobileForm="ngForm" (ngSubmit)="log(mobileForm)">
+    <div class="form-group">
+      <label class="center-block">Mobile:
+        <input type="text" class="form-control" [(ngModel)]="mobile" name="mobile" id="mobile" #mobileNumber="ngModel" required>
+        <em *ngIf="mobileNumber.invalid && mobileNumber.touched">Required</em>
+      </label>
+    </div>
+
+    <div>
+      <input class="btn" type="submit" value="Submit">
+    </div>
+  </form>
+</div>
+{{mobileForm.controls.mobile.pristine}}

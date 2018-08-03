@@ -1,0 +1,20 @@
+<form [formGroup]="heroForm" (ngSubmit)="login()">
+  <div class="form-group">
+    <label class="center-block">Name:
+      <input type="text" class="form-control" formControlName="name">
+    </label>
+  </div>
+  <div class="form-group">
+    <label class="center-block">Password:
+      <input type="password" class="form-control" formControlName="password">
+    </label>
+  </div>
+
+  <input type="submit" class="btn btn-primary" [disabled]="heroForm.status === 'INVALID'">
+</form>
+<br>
+<p>Form value: {{ heroForm.value | json }}</p>
+<p>Form status: {{ heroForm.status | json }}</p>
+<!-- <p>Name: {{ heroForm.name.invalid }}</p> -->
+
+<hr>

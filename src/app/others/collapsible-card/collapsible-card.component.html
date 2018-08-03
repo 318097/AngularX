@@ -1,0 +1,8 @@
+<div class="well" style="cursor: pointer" (click)="toggleCard()">
+  <h3>
+    <ng-content select="[card-title]"></ng-content>
+  </h3>
+  <p *ngIf="visible">
+    <ng-content select=".card-body"></ng-content>
+  </p>
+</div>
