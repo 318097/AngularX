@@ -1,20 +1,60 @@
-<form [formGroup]="heroForm" (ngSubmit)="login()">
+<form [formGroup]="userForm" (ngSubmit)="login()">
+
   <div class="form-group">
     <label class="center-block">Name:
       <input type="text" class="form-control" formControlName="name">
     </label>
   </div>
+
+  <div class="form-group">
+    <label class="center-block">Email:
+      <input type="text" class="form-control" formControlName="email">
+    </label>
+    <span>
+      {{emailErrors | json}}
+    </span>
+  </div>
+
   <div class="form-group">
     <label class="center-block">Password:
       <input type="password" class="form-control" formControlName="password">
     </label>
   </div>
 
-  <input type="submit" class="btn btn-primary" [disabled]="heroForm.status === 'INVALID'">
+  <div class="form-group">
+    <label class="center-block">Rating:
+      <input type="text" class="form-control" formControlName="rating">
+    </label>
+    <span *ngIf="userForm.get('rating').touched || userForm.get('rating').dirty && userForm.get('rating').errors">
+      <span *ngIf="userForm.get('rating').errors.range">
+        Please rate your experience from 1 to 5
+      </span>
+    </span>
+  </div>
+
+  <div class="form-group">
+    <label class="center-block">Score:
+      <input type="text" class="form-control" formControlName="score">
+    </label>
+    <span *ngIf="userForm.get('score').touched || userForm.get('score').dirty && userForm.get('score').errors">
+      <span *ngIf="userForm.get('score').errors.range">
+        Please enter score from 1 - 100
+      </span>
+    </span>
+  </div>
+
+  <input type="submit" class="btn btn-primary" [disabled]="userForm.status === 'INVALID'">
 </form>
 <br>
-<p>Form value: {{ heroForm.value | json }}</p>
-<p>Form status: {{ heroForm.status | json }}</p>
-<!-- <p>Name: {{ heroForm.name.invalid }}</p> -->
-
+<p>Form value: {{ userForm.value | json }}</p>
+<p>Form status: {{ userForm.status | json }}</p>
+<!-- <p>Name valid?: {{ userForm.controls.name.valid}}</p> -->
+<p>Name valid?: {{ userForm.get('name').valid}}</p>
+<p>Password valid?: {{ userForm.get('password').valid}}</p>
+<p>Rating valid?: {{ userForm.get('rating').valid}}</p>
+<p>Score valid?: {{ userForm.get('score').valid}}</p>
 <hr>
+
+<button class="btn btn-primary" (click)="setValue()">Set value</button>
+<button class="btn btn-primary" (click)="getFormValue()">Get Form Value</button>
+<button class="btn btn-primary" (click)="setFormValidations()">Set new validations for password</button>

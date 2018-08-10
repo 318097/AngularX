@@ -2,9 +2,15 @@
 <h2 class="well" [ngClass]="{'red' : true}">Activation Guard</h2>
 <button class="btn btn-danger" (click)="setAccess(false)">Lock</button>
 <button class="btn btn-success" (click)="setAccess(true)">Unlock</button>
-
 <hr>
-
+<div class="animation-button">
+    Button
+    <div class="line-box">
+        <div class="line">
+        </div>
+    </div>
+</div>
+<hr>
 <h2> Content Projection</h2>
 <div class="card" *ngFor="let data of cardData">
     <app-collapsible-card>
@@ -17,14 +23,10 @@
         </div>
     </app-collapsible-card>
 </div>
-
 <hr>
-
 <h2>DOM Sanitizer</h2>
-<div [innerHTML]="htmlData | safeHtml"></div>
-
+<div id="post" [innerHTML]="htmlData | safeHtml"></div>
 <hr>
-
 <div>
     <h3 class="slide-effect">Parent</h3>
     <input type="text" [(ngModel)]="obj.name">
@@ -37,11 +39,4 @@
 <hr>
 <button (click)="log()">CLICK</button>
 <br> {{obj | json}}
-
 <hr>
-
-<div class="button">
-    Buttonn
-    <div class="test">
-    </div>
-</div>

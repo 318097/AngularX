@@ -1,47 +1,32 @@
-// :host ::ng-deep .red {
-//     color: tomato;
-//     font-weight: bold;
-// }
 .btn {
     margin: 0 3px;
 }
 
-.button {
+.animation-button {
     position: relative;
     background: rgb(9, 53, 99);
-    display: inline;
+    display: inline-block;
+    width: 60px;
     padding: 10px;
     color: white;
-}
-
-div.test {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: inline;
-    border: 3px solid rgb(45, 45, 45);
-    transition: 2s;
-    width: 0%;
-    padding: 0;
-    height: 100%;
-}
-
-div.test::after {
-    content: '';
-    display: inline-block;
-    border: 1px solid tomato;
-    width: 100%;
-    left: 0;
-    top: 100%;
-    transition: 2s;
-    position: absolute;
-}
-
-div.button:hover div.test {
-    width: 100%;
-}
-
-div.test:hover::after {
-    /* border: 1px solid green; */
-    padding: 0;
+    box-sizing: border-box;
+    .line-box {
+        border: 1px solid black;
+        position: absolute;
+        top: 0;
+        left: 0;
+        box-sizing: border-box;
+        display: inline;
+        transition: 2s;
+        width: 100%; // padding-left: 30px;
+        height: 100%;
+        padding: 0 50%;
+        .line {
+            border-bottom: 3px solid tomato;
+            width: 100%; // position: absolute; // top: 90%;
+        }
+        &:hover {
+            padding: 0;
+        }
+    }
 }

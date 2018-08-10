@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
   id: any;
-  htmlData: any = '<p class="red" (click)="sayHello()" style="font-weight :bold; font-style:italic">kljsdflkjlkdsfkal</p>';
+  htmlData: any = '<p class="red" onclick="sayHello()" style="font-weight :bold; font-style:italic">kljsdflkjlkdsfkal</p>';
   cardData: any = [
     { title: 'Title 1', content: 'Content ... ...' },
     { title: 'Title 2', content: 'Content ... ...' },
@@ -18,7 +18,6 @@ export class HomeComponent implements OnInit {
   obj = {
     name: ''
   };
-
 
   constructor(private route: ActivatedRoute) {
     // console.log(this.route);
@@ -31,9 +30,11 @@ export class HomeComponent implements OnInit {
   setAccess(value: any) {
     localStorage.setItem('access', value);
   }
+
   log() {
     console.log(this.obj);
   }
+
   sayHello() {
     alert('Hello ...');
   }

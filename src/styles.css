@@ -11,3 +11,11 @@
 .red {
     color: orange;
 }
+
+body {
+    background: linear-gradient( to right, #fff, rgb(231, 242, 248), rgb(210, 227, 237));
+}
+
+.btn {
+    margin: 3px;
+}
