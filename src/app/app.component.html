@@ -1,12 +1,16 @@
 <div class="container">
   <h2>Angular</h2>
   <div class="nav" fxLayout="row wrap" fxLayoutAlign="center start">
-    <a routerLinkActive="active" routerLink="/home">Home</a>
+    <!-- routerLinkActiveOptions is used to match the exact route.
+    The 'active' class should be applied to a match which has the exact route '/home' & not apply for '/home/something' -->
+    <a routerLinkActive="active" routerLink="/home" [routerLinkActiveOptions]="{exact: true}">Home</a>
     <a routerLinkActive="active" routerLink="/search-select">Search Select</a>
     <a routerLinkActive="active" routerLink="/reactive-forms">Reactive Forms</a>
     <a routerLinkActive="active" routerLink="/template-forms">Template Forms</a>
     <a routerLinkActive="active" routerLink="/guards">Guards</a>
     <a routerLinkActive="active" routerLink="/ui">UI</a>
+    <a routerLinkActive="active" routerLink="/mat">Mat</a>
+    <a routerLinkActive="active" routerLink="/utility">Utility</a>
   </div>
   <hr>
   <div class="section">

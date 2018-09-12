@@ -10,6 +10,8 @@ import { RouteActivateGuard } from './common/route-activate.guard';
 import { HomeComponent } from './home/home.component';
 import { RouteDeactivateGuard } from './common/route-deactivate.guard';
 import { UiComponent } from './ui/ui.component';
+import { MatComponent } from './mat/mat.component';
+import { UtilityComponent } from './utility/utility.component';
 
 const routes: Routes = [
   { path: 'search-select', component: SearchSelectComponent },
@@ -24,6 +26,8 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'ui', component: UiComponent },
+  { path: 'mat', component: MatComponent },
+  { path: 'utility', component: UtilityComponent },
 ];
 
 @NgModule({

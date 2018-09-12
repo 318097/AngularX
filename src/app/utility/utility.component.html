@@ -1,0 +1,7 @@
+<form>
+    <input [(ngModel)]="phoneNo" (keyup)="formatPhoneNumber($event)" name="phoneNo" maxlength="10">
+    <button (click)="removeMobileFormat()">Convert</button>
+    <br>
+    <br>
+    <input [(ngModel)]="phoneNo2" (keyup)="formatMobile($event.target.value)" name="phoneNo2">
+</form>

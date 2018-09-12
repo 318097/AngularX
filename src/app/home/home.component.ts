@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
+// import { JQ_TOKEN } from '../common/jQuery.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -19,11 +19,17 @@ export class HomeComponent implements OnInit {
     name: ''
   };
 
-  constructor(private route: ActivatedRoute) {
+  constructor(
+    private route: ActivatedRoute,
+    // @Inject('JQ_TOKEN') private $: any
+  ) {
     // console.log(this.route);
   }
 
   ngOnInit() {
+    // this.$.onload(function () {
+    //   alert('sfdf');
+    // });
     // this.guardStatus = localStorage.access;
   }
 

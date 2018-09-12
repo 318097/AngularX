@@ -21,6 +21,11 @@ import { SafeHtmlPipe } from './safe-html.pipe';
 import { UiComponent } from './ui/ui.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { TestComponent } from './test/test.component';
+import { MatComponent } from './mat/mat.component';
+import { UtilityComponent } from './utility/utility.component';
+import { JQ_TOKEN } from './common/jQuery.service';
+
+const jQuery = window['$'];
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,19 +38,27 @@ import { TestComponent } from './test/test.component';
     SafeHtmlPipe,
     UiComponent,
     TestComponent,
+    MatComponent,
+    UtilityComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
     BrowserAnimationsModule,
-    MaterialModule,
     NgxMatSelectSearchModule,
     ReactiveFormsModule,
     FormsModule,
     FlexLayoutModule
   ],
-  providers: [RouteActivateGuard, RouteDeactivateGuard],
+  providers: [
+    RouteActivateGuard,
+    RouteDeactivateGuard,
+    {
+      provide: JQ_TOKEN,
+      useValue: jQuery
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -8,6 +8,10 @@ export class TemplateFormsComponent implements OnInit {
   name: string;
   password: string;
   mobile: any;
+  test: {
+    name: ''
+  };
+  testName: string;
   constructor() { }
 
   ngOnInit() {
